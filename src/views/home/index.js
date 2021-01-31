@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 // Components
 import MainLayout from "../../components/MainLayout"
+import LabelComponent from "../../components/Core/Label"
 
 export class Home extends Component {
     render() {
         return (
             <div>
-                <h1>SpaceX Launch Programs</h1>
+                <LabelComponent>SpaceX Launch Programs</LabelComponent>
                 <MainLayout />
             </div>
         )

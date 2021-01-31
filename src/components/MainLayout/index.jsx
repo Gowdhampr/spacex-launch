@@ -29,10 +29,12 @@ const MainLayout = (props) => {
     return (
         <main className="mainLayout">
             <section className="filterSection">
+                {/* Filter section Card */}
                 <FilterCard />
             </section>
             <section className="mainContent">
                 <div className="cardList">
+                    {/* Spacex launch list */}
                     {filteredSpacexLaunchList.length > 0 && filteredSpacexLaunchList.map(launchList => (
                         <SpacexLaunchCard key={launchList.flight_number} data={launchList} />
                     ))}

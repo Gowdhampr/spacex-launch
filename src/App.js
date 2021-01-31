@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
+
+// Style
 import "./App.scss";
 
 /** Layouts **/
@@ -9,7 +11,7 @@ import DefaultLayout from "./containers/DefaultLayout";
 import Home from "./views/home";
 
 /*
-   App
+   App Content
  */
 class App extends Component {
   render() {
