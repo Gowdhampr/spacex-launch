@@ -6,7 +6,7 @@ import MainLayout from "../../components/MainLayout"
 export class Home extends Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <h1>SpaceX Launch Programs</h1>
                 <MainLayout />
             </div>

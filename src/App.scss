@@ -1,5 +1,16 @@
 body {
   background-color: #f2f2f2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body,
+p,
+h1,
+h4 {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -10,22 +21,9 @@ body {
   padding-left: 10px;
 }
 
-.cardList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  background-color: #ffffff;
-  border-radius: 5px;
-  margin: 10px;
-  .cardBody {
-    padding: 10px;
-  }
-}
-
 .mainLayout {
   display: flex;
+  margin: 25px 0 25px 0;
   .filterSection {
     .card {
       width: 240px;
@@ -34,40 +32,94 @@ body {
 
   .mainContent {
     width: 100%;
+
+    .cardList {
+      display: flex;
+      flex-wrap: wrap;
+      .card {
+        .cardBody {
+          * {
+            padding: 5px 0 5px 0;
+          }
+          li {
+            margin: 0 0 0 30px;
+          }
+        }
+      }
+    }
   }
 }
 
-@media (min-width: 1024px) {
-  .cardList {
-    flex-wrap: nowrap;
+.card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 10px;
+  .cardBody {
+    padding: 10px;
+    .imageContainer {
+      text-align: center;
+    }
   }
+}
+
+.cardList {
   .card {
-    width: 22.7%;
+    .cardBody {
+      span {
+        color: #454d9f;
+      }
+      .imageContainer {
+        background-color: #f2f2f2;
+      }
+      ul {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.filterContentWrapper {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 0 25px 0;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 22%;
   }
 }
 
 @media (min-width: 700px) and (max-width: 1024px) {
-  .card {
-    width: 45%;
+  .cardList {
+    max-width: 600px;
+    justify-content: center;
+    .card {
+      max-width: 190px;
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: 699px) {
   .mainLayout {
-    flex-direction: column;
+    flex-wrap: wrap;
     .filterSection {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      .card {
-        width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mainContent {
+      .cardList {
+        width: min-content;
+        margin-right: auto;
+        margin-left: auto;
+        .card {
+          width: 230px;
+        }
       }
     }
-  }
-  .card {
-    width: 75%;
-  }
-  .cardList {
-    justify-content: center;
   }
 }
