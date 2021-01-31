@@ -11,7 +11,6 @@ const ButtonWrapper = styled.div`
   margin: 10px 8px;
 `;
 const Button = styled.button`
-  cursor: pointer;
   background-color: ${({ isSelected }) => (isSelected ? '#76BD00' : '#C3E099')};
   padding: 5px 15px;
   border: none;

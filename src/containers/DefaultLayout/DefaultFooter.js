@@ -5,7 +5,7 @@ class DefaultFooter extends Component {
     return (
       <div className="footer">
         <div className="container">
-          <strong>Developed By: Gowdham pr</strong>
+          <strong>Developed By: Gowdham Rajendran</strong>
         </div>
       </div>
     );
