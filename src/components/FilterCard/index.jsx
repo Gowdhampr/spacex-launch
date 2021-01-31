@@ -29,25 +29,27 @@ const FilterCard = () => {
     const [successfulLaunchFilter, setSuccessfulLaunchFilter] = useState(getParamsByName('spacex_launch_success'));
     const [successfulLandingFilter, setSuccessfulLandingFilter] = useState(getParamsByName('spacex_landing_success'));
     
-  useEffect(() => {
+    useEffect(() => {
+        handleQueryString();
+    }, [launchYearFilter, successfulLaunchFilter, successfulLandingFilter]);
+
+    const isSelected = (paramName, value) => {
+        return getParamsByName(paramName) === value;
+    }
+
     const handleQueryString = () => {
 
         const fiterObj = {
-          spacex_launch_year: launchYearFilter,
-          spacex_launch_success: successfulLaunchFilter,
-          spacex_landing_success: successfulLandingFilter,
+        spacex_launch_year: launchYearFilter,
+        spacex_launch_success: successfulLaunchFilter,
+        spacex_landing_success: successfulLandingFilter,
         };
-    
-        const queryParams = generateQueryString(fiterObj);
-    
-        history.push(`?${queryParams}`);
-      };
-    handleQueryString();
-  }, [launchYearFilter, successfulLaunchFilter, successfulLandingFilter]);
 
-  const isSelected = (paramName, value) => {
-    return getParamsByName(paramName) === value;
-  }
+        const queryParams = generateQueryString(fiterObj);
+
+        history.push(`?${queryParams}`);
+    };
+
     return (
         <Card>
             <h4>Filters</h4>
